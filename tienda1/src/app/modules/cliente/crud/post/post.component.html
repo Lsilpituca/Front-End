@@ -1,16 +1,16 @@
 
 <div class="container">
-    <form [formGroup]="postForm">
+    <form [formGroup]="postForm" (submit)="CrearCli()">
         <ul>
-            <li>
+
                 <li><input formContolName="nombre" type="text" placeholder="nombre"></li>
                 <li><input formContolName="apellido" type="text" placeholder="apellido"></li>
                 <li><input formContolName="domicilio" type="text" placeholder="domicilio"></li>
                 <li><input formContolName="dni" type="number" placeholder="dni"></li>
                 <li><input formContolName="correo" type="text" placeholder="correo"></li>
-                <li> <input formContolName="id_localidad" type="string" placeholder="id_localidad"></li>
+                <li> <input formContolName="id_localidad" type="text" placeholder="id_localidad"></li>
                 
-                <li> <button (click)="CrearCli()">Crear Cliente</button></li>     
+                <li> <button type="submit">Crear Cliente</button></li>     
         </ul>
     </form>
     </div>

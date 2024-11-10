@@ -1,0 +1,35 @@
+<mat-toolbar>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-6">
+                <button mat-raised-button  >
+                    agregar
+                    <mat-icon>add_circle_outline</mat-icon>
+                </button>
+            </div>
+            <div class="col-6">
+                <p>
+                    <mat-form-field appearance="fill">
+                      <mat-label>buscar</mat-label>
+                      <input matInput placeholder="Placeholder">
+                      <mat-icon matSuffix>search</mat-icon>
+                    </mat-form-field>
+                </p>
+            </div>
+            
+        </div>
+    </div>
+</mat-toolbar>
+
+
+<div class="content">
+    <div *ngFor="let item of datosPro">
+    <h1>Nombre Del producto: {{item.nombre}}</h1> 
+    <p>Tipo de Producto: {{item.nombreTipoP}}</p>
+    <span>Precio {{item.precio | currency}}</span>
+    <p></p>
+    <span>descuento {{item.descuento}}</span>
+    <p></p>
+    <span>stock {{item.stock}}</span>  
+    <button (click)="add()">modificar</button>
+    </div>  

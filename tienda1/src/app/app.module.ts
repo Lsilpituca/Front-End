@@ -1,31 +1,38 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
-import { provideHttpClient } from '@angular/common/http';
+import { provideHttpClient, withFetch } from '@angular/common/http';
 
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { GetComponent } from './cliente/crud/get/get.component';
-import { PostComponent } from './cliente/crud/post/post.component';
+import { GetComponent } from './modules/cliente/crud/get/get.component';
+import { PostComponent } from './modules/cliente/crud/post/post.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { GlobalModule } from './modules/global/global.module.js';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    GetComponent,
-    PostComponent
+   
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     ReactiveFormsModule,
+    GlobalModule,
   ],
   providers: [
     provideClientHydration(),
-    provideHttpClient(),
+    provideHttpClient(withFetch()),
+    provideAnimationsAsync(),
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  exports:[
+    HttpClientModule,
+  ]
 })
 export class AppModule { }

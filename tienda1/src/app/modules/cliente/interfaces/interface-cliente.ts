@@ -6,4 +6,5 @@ export interface InterfaceCliente {
     dni:string;
     correo:string;
     id_localidad: string;
+   
 }
